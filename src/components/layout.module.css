@@ -1,0 +1,43 @@
+.container {
+    margin: auto;
+    max-width: 500px;
+    font-family: Helvetica, sans-serif;
+  }
+  .heading {
+    color: black;
+    text-align: center;
+  }
+  .sub-heading {
+   
+    font-size: 1rem;
+    color: gray;
+    font-weight: 500;
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .nav {
+    display: table;   
+	  margin: 0 auto;
+  }
+  .nav-links {
+    list-style: none;
+    display:inline-flex;
+  }
+  .nav-link-item {
+    padding-right: 2rem;
+    
+  }
+  .nav-link-text {
+    color: rgb(195, 5, 5);
+    text-decoration: none;
+    
+  }
+  .site-title {
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    margin: 1rem 0;
+    text-align: center;
+
+  }
+
