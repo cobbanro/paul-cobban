@@ -1,18 +1,47 @@
-// Step 1: Import React
 import * as React from 'react'
+import {GatsbyImage, getImage} from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-// Step 2: Define your component
-const AboutPage = () => {
+const AboutPage = ({data}) => {
+  const image = getImage(data.contentfulAbout.paulImage)
+  const descriptionHtml = data.contentfulAbout.description.childMarkdownRemark.html
+  const awardsHtml = data.contentfulAbout.awards.childMarkdownRemark.html
   return (
-    <Layout pageTitle="About">
-    <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
-  </Layout>
+    <div>
+       <Layout pageTitle= {data.contentfulAbout.slug}>
+          <GatsbyImage image={image}/>
+       </Layout>
+       <div dangerouslySetInnerHTML={{ __html: descriptionHtml }}/>
+       <br></br>
+       <div dangerouslySetInnerHTML={{ __html: awardsHtml }}/>
+    </div>
   )
 }
 
-export const Head = () => <Seo title="About"/>
+export const query = graphql`
+  query MyQuery($slug: String) {
+    contentfulAbout(slug: {eq: $slug}) {
+      paulImage {
+        gatsbyImageData
+      }
+      slug
+      awards {
+        childMarkdownRemark {
+          html
+        }
+      }
+      description {
+        description
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+  }
+`
 
-// Step 3: Export your component
+export const Head = ({data}) => <Seo title= {data.contentfulAbout.slug}/>
 export default AboutPage

@@ -5,12 +5,12 @@ import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import Seo from '../components/seo'
 
-const BookPage = ({data, children}) => {
-    const image = getImage(data.contentfulBook.bookImage)
+const BookPage = ({data}) => {
+  const image = getImage(data.contentfulBook.bookImage)
   return (
     <div>
         <Layout pageTitle={data.contentfulBook.slug}>
-            {children}
+            
             <GatsbyImage image={image}/>
         </Layout>
         <div>{data.contentfulBook.bookDescription.bookDescription}</div>

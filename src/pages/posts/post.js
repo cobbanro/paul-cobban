@@ -6,13 +6,12 @@ import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 
-const Post = ({data, children}) => {
+const Post = ({data}) => {
     const image = getImage(data.contentfulPost.image)
     const { html } = data.contentfulPost.childContentfulPostContentTextNode.childMarkdownRemark
     return (
         <div>
-            <Layout pageTitle={data.contentfulPost.slug}>
-                 {children}
+            <Layout pageTitle={data.contentfulPost.slug}>       
                 <GatsbyImage image={image}/>
             </Layout>
             <div dangerouslySetInnerHTML={{ __html: html }}/>
