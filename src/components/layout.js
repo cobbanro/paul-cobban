@@ -20,6 +20,7 @@ import {
                 <ul className={navLinks}>
                     <li className={navLinkItem}><Link to="/" className={navLinkText}>Home</Link></li>
                     <li className={navLinkItem}><Link to="/posts" className={navLinkText}>Posts</Link></li>
+                    <li className={navLinkItem}><Link to="/book" className={navLinkText}>Book</Link></li>
                     <li className={navLinkItem}><Link to="/about" className={navLinkText}>About</Link></li>
                     
                 </ul>
