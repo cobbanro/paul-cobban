@@ -10,10 +10,10 @@ const BookPage = ({data}) => {
   return (
     <div>
         <Layout pageTitle={data.contentfulBook.slug}>
-            
             <GatsbyImage image={image}/>
-        </Layout>
+       
         <div>{data.contentfulBook.bookDescription.bookDescription}</div>
+        </Layout>
     </div>
   )
 }

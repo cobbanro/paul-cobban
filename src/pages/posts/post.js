@@ -13,8 +13,9 @@ const Post = ({data}) => {
         <div>
             <Layout pageTitle={data.contentfulPost.slug}>       
                 <GatsbyImage image={image}/>
-            </Layout>
+           
             <div dangerouslySetInnerHTML={{ __html: html }}/>
+            </Layout>
         </div>
     )   
 }

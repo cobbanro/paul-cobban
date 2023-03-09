@@ -13,10 +13,11 @@ const AboutPage = ({data}) => {
     <div>
        <Layout pageTitle= {data.contentfulAbout.slug}>
           <GatsbyImage image={image}/>
-       </Layout>
+       
        <div dangerouslySetInnerHTML={{ __html: descriptionHtml }}/>
        <br></br>
        <div dangerouslySetInnerHTML={{ __html: awardsHtml }}/>
+       </Layout>
     </div>
   )
 }
