@@ -8,7 +8,7 @@ import Seo from '../components/seo'
 const SpeakingPage = ({data}) => {
     return(
         <div>
-            <Layout pageTitle= {"Speaking"}>
+            <Layout pageTitle="Speaking">
                 {
                     data.allContentfulSpeaking.edges.map(edge => (
                         <article key={edge.id}>

@@ -8,8 +8,8 @@ const PostPage = ({data}) => {
         <Layout pageTitle="Posts">
             {
                 data.allContentfulPost.edges.map(edge => (
-                    <article key={edge.id}>
-                        <h2><Link to={`/posts/${edge.node.slug}`}>{edge.node.slug}</Link></h2>
+                    <article key={edge.node.id}>
+                        <h2><Link to={`/posts/${edge.node.title}`}>{edge.node.title}</Link></h2>
                     </article>
                 ))
             }
@@ -18,17 +18,12 @@ const PostPage = ({data}) => {
 }
 
 export const query = graphql`
-query MyQuery {
+  query MyQuery {
     allContentfulPost {
       edges {
         node {
-          slug
-          content {
-            id
-            internal {
-              content
-            }
-          }
+          title
+          id
         }
       }
     }

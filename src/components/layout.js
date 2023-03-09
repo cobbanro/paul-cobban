@@ -24,6 +24,7 @@ import {
                     <li className={navLinkItem}><Link to="/speaking" className={navLinkText}>Speaking</Link></li>
                     <li className={navLinkItem}><Link to="/articles" className={navLinkText}>Articles</Link></li>
                     <li className={navLinkItem}><Link to="/about" className={navLinkText}>About</Link></li>
+                    <li className={navLinkItem}><Link to="/contact" className={navLinkText}>Contact</Link></li>
                 </ul>
             </nav>
             <main>

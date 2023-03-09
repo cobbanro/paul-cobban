@@ -11,7 +11,7 @@ const Post = ({data}) => {
     const { html } = data.contentfulPost.childContentfulPostContentTextNode.childMarkdownRemark
     return (
         <div>
-            <Layout pageTitle={data.contentfulPost.slug}>       
+            <Layout pageTitle={data.contentfulPost.title}>       
                 <GatsbyImage image={image}/>
            
             <div dangerouslySetInnerHTML={{ __html: html }}/>
@@ -23,8 +23,8 @@ const Post = ({data}) => {
 
 
 export const query = graphql`
-query MyQuery($slug: String) {
-    contentfulPost(slug: {eq: $slug}) {
+query MyQuery($title: String) {
+    contentfulPost(title: {eq: $title}) {
       childContentfulPostContentTextNode {
         childMarkdownRemark {
           html
@@ -33,10 +33,10 @@ query MyQuery($slug: String) {
       image {
         gatsbyImageData(width: 1200, height: 1200)
       }
-      slug
+      title
     }
   }
 `
 
-export const Head = ({ data }) => <Seo title={data.contentfulPost.slug}/>
+export const Head = ({ data }) => <Seo title={data.contentfulPost.title}/>
 export default Post
