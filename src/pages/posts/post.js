@@ -20,8 +20,6 @@ const Post = ({data}) => {
     )   
 }
 
-
-
 export const query = graphql`
 query MyQuery($title: String) {
     contentfulPost(title: {eq: $title}) {
