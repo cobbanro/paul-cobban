@@ -17,7 +17,7 @@ const SpeakingPage = ({data}) => {
                         </article>
                     ))
                 }
-                </Layout>
+            </Layout>
         </div>
     )
 }
